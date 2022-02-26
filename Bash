@@ -3,7 +3,6 @@ echo $(( $RANDOM )) >>  $(( $RANDOM % 100 + 1)).txt
 echo $(( $RANDOM )) >>  $(( $RANDOM % 200 + 100)).txt
 echo $(( $RANDOM )) >>  $(( $RANDOM % 300 + 200)).txt
 echo $(( $RANDOM )) >>  $(( $RANDOM % 400 + 300)).txt
-scp ./*.txt ubuntu@192.168.1.1:/home/ubuntu/
-ssh ubuntu@192.168.1.1 'find /home/ubuntu/ -type f -mtime +7 -delete'
-15 * * * /home/ubuntu/bash.sh
-fi
+scp ./*.txt azureuser@10.0.0.7:/home/azureuser/
+ssh azureuser@10.0.0.7 'find /home/azureuser/ -type f -mtime +7 -delete'
+1 * * * /home/azureuser/bash.sh
